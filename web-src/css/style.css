@@ -1,0 +1,25 @@
+/* 
+@author: Gaurav Agarwal
+@description: The main CSS file.
+@Date: 2nd Dec 2018. 
+*/
+
+.page-heading {
+    text-align: center;
+    padding: 15px;
+    background-color: #2870B8;
+    color: white;
+}
+
+.container {
+
+}
+
+.row {
+    margin: 10px;
+}
+
+.btn {
+    width: 45%;
+    margin: 5px;
+}
