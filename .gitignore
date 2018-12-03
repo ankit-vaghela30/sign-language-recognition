@@ -105,3 +105,6 @@ venv.bak/
 
 # Mac DS_store files
 .DS_Store
+
+# images captured by webcam
+Web-service/images/*.jpg

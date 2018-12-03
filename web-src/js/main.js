@@ -45,10 +45,11 @@ function getWebcamFeed() {
     screenshotInterval = setInterval(function () {
         canvas.width = video.videoWidth;
         canvas.height = video.videoHeight;
-        canvas.getContext('2d').drawImage(video, 0, 0);
+        canvas.getContext('2d').drawImage(video, 0, 0, 320, 240);
         // Other browsers will fall back to image/png
         img.src = canvas.toDataURL('image/webp');
-    }, 2000);
+        sendImgToDetect(canvas.toDataURL('image/jpeg', 0.3));
+    }, 100);
 }
 
 /**
@@ -57,10 +58,41 @@ function getWebcamFeed() {
 function disableWebcamFeed() {
     try {
         clearInterval(screenshotInterval);
-        const img = document.querySelector('#screenshot');
-        img.src = "";
+        document.querySelector('#screenshot').src = "";
+
         _streamCopy.stop(); // if this method doesn't exist, the catch will be executed.
     } catch (e) {
         _streamCopy.getVideoTracks()[0].stop(); // then stop the first video track of the stream
     }
+}
+
+
+function sendImgToDetect(base64_img) {
+    base64_img = base64_img.replace('data:image/jpeg;base64,','');
+    var jsonQuery = {
+        image: ""+base64_img
+    }
+    // console.log(base64_img);
+    $.ajax({
+        dataType: "text",
+        url: "http://127.0.0.1:5000/upload",
+        data: JSON.stringify(jsonQuery),
+        method: 'POST',
+        xhrFields: {
+            withCredentials: true
+        },
+        crossDomain: true,
+        contentType: 'application/json; charset=utf-8',
+        // timeout: 50000,
+        success: ajaxSuccess,
+        error: ajaxFailure
+    });
+}
+
+function ajaxSuccess(result) {
+    console.log(result);
+}
+
+function ajaxFailure(jqXHR, textStatus, errorThrown) {
+    console.log(jqXHR.status+" : "+textStatus+" : "+errorThrown);
 }
