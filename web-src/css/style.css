@@ -12,7 +12,7 @@
 }
 
 .container {
-
+    margin-top : 3rem;
 }
 
 .row {
@@ -28,4 +28,23 @@ video {
     transform: rotateY(180deg);
     -webkit-transform:rotateY(180deg); /* Safari and Chrome */
     -moz-transform:rotateY(180deg); /* Firefox */
+}
+
+/* #screenshot {
+    width: 100%;
+    height: auto;
+} */
+.card-img-bottom {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+#recognizedLetter, #accuracy {
+    font-size: 5rem;
+    text-align: center;
+}
+
+#appendedText {
+    width: 100%;
 }

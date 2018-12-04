@@ -53,21 +53,39 @@
                 <div class="card">
                     <div class="card-body">
                         <h5 class="card-title">Web Cam Input</h5>
-                        <!-- <p class="card-text">With supporting text below as a natural lead-in to additional content.</p> -->
-                        <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
-                        <p class="card-text"><small class="text-muted">Takes frame every 2 sec.</small></p>
+                        <p class="card-text"><small class="text-muted">Takes 1 fps</small></p>
                     </div>
-                    <!-- <img class="card-img-bottom" src="..." alt="Camera input"> -->
                     <video class="card-img-bottom" autoplay alt="Camera feed"></video>
                 </div>
             </div>
             <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Sent image</h5>
-                        <p class="card-text"><small class="text-muted">This image was sent for recognition.</small></p>
-                        <img src="" id="screenshot">
-                        <!-- <canvas style="display:none;"></canvas> -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div class="card">
+                            <div class="card-header">Accuracy</div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="accuracy"></h5>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="card text-white bg-dark">
+                            <div class="card-header">Recognized Letter</div>
+                            <div class="card-body">
+                                <h5 class="card-title" id="recognizedLetter"></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <!-- <img class="card-img-top" src="" id="client_images" /> -->
+                            <div class="card-header">Text received</div>
+                            <div class="card-body">
+                                <textarea class="card-text" id="appendedText" rows="6"></textarea>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -76,6 +94,9 @@
             <div class="col-sm-6 text-center">
                 <button type="button" class="btn btn-outline-primary" onclick="checkBrowserSupport()">Capture Video</button>
                 <button type="button" class="btn btn-outline-dark" onclick="disableWebcamFeed()">Stop</button>
+            </div>
+            <div class="col-sm-6 text-center">
+                <button type="button" class="btn btn-light" onclick="resetFields()">Reset</button>
             </div>
         </div>
     </div>
