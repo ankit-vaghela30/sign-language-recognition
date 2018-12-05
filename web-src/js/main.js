@@ -104,7 +104,7 @@ function sendImgToDetect(base64_img) {
 function ajaxSuccess(result) {
     result = JSON.parse(result);
     var acc = Math.round(result.accuracy);
-    if(acc != 0){
+    if(acc > 0){
         var letter = result.letter_detected.toUpperCase();
         $('#recognizedLetter').text(letter);
         $('#appendedText').append(letter);
