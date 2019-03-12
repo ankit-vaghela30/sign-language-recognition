@@ -1,4 +1,4 @@
-# Sign-labguage-recognition
+# Sign-language-recognition
 This is a project developed as a final project for the course Advanced Data Analytics taught by Dr Yi Hong at University of Georgia. It was voted as **Best project in class**.
 
 ## Aim
@@ -30,4 +30,9 @@ We used EgoHands dataset which is a dataset for hands in complex egocentric inte
 * We saved and loaded this model as h5py file.
 <img src="https://github.com/ankit-vaghela30/sign-language-recognition/blob/master/example/training.png">
 
-For more detailed description, Please have a look at our project report: [link](https://github.com/ankit-vaghela30/sign-language-recognition/blob/master/ADA_paper.pdf)
+For more detailed description, Please have a look at our [project report](https://github.com/ankit-vaghela30/sign-language-recognition/blob/master/ADA_paper.pdf)
+
+## References
+* https://www.kaggle.com/grassknoted/asl-alphabet/home
+* https://towardsdatascience.com/transfer-learning-946518f95666
+* https://www.kaggle.com/paultimothymooney/interpret-sign-language-with-deep-learning/notebook 
